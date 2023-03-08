@@ -38,6 +38,6 @@ func main() {
     // Execute the SQL schema file
     _, err = db.Exec(string(schema))
     if err != nil {
-        log.Fatal(err) */
-    }
+        log.Fatal(err) 
+    }*/
 }
