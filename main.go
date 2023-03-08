@@ -29,7 +29,7 @@ func main() {
     }
     defer db.Close()
 
-    // Read the SQL schema file
+    /* Read the SQL schema file
     schema, err := ioutil.ReadFile("kitabe-dede-qorqud.sql")
     if err != nil {
         log.Fatal(err)
@@ -38,6 +38,6 @@ func main() {
     // Execute the SQL schema file
     _, err = db.Exec(string(schema))
     if err != nil {
-        log.Fatal(err)
+        log.Fatal(err) */
     }
 }
