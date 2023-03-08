@@ -14,6 +14,12 @@ services:
   app:
     build: .
     restart: always
+    environment:
+      PGUSER: myuser
+      PGPASSWORD: mypassword
+      PGDATABASE: mydb
+      PGHOST: localhost
+      PGPORT: "5432"
     ports:
       - "8080:8080"
     depends_on:
