@@ -13,6 +13,8 @@ services:
       - ./kitabe-dede-qorqud.sql:/docker-entrypoint-initdb.d/kitabe-dede-qorqud.sq
   app:
     build: .
+    environment:
+      DEBUG: "true"
     deploy:
     restart: always
     ports:
