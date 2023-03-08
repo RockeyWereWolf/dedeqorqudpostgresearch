@@ -8,6 +8,7 @@ import (
     "os"
 
     _ "github.com/lib/pq"
+    log "github.com/sirupsen/logrus"  
 )
 
 func main() {
