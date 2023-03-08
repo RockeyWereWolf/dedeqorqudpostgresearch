@@ -33,6 +33,10 @@ func main() {
     if os.Getenv("DEBUG") == "true" {
     log.SetLevel(log.DebugLevel)
     }
+    
+    for {
+        time.Sleep(time.Second * 10)
+    }
 
     /* Read the SQL schema file
     schema, err := ioutil.ReadFile("kitabe-dede-qorqud.sql")
