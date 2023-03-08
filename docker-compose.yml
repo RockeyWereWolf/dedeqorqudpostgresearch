@@ -11,7 +11,7 @@ services:
       PGPORT: "5432"
     volumes:
       - ./kitabe-dede-qorqud.sql:/docker-entrypoint-initdb.d/kitabe-dede-qorqud.sql
-      ports:
+    ports:
       - "5432"
   app:
     build: .
