@@ -19,7 +19,7 @@ func main() {
     dbname := os.Getenv("PGDATABASE")
 
     // Create a connection string using the parameters
-    connStr := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=require",
+    connStr := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
         host, port, user, password, dbname)
 
     // Open a connection to the database
