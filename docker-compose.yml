@@ -4,22 +4,16 @@ services:
     image: postgres
     restart: always
     environment:
-      PGUSER: myuser
-      PGPASSWORD: mypassword
-      PGDATABASE: mydb
-      PGHOST: localhost
-      PGPORT: "5432"
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydb
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: "5432"
     volumes:
       - ./kitabe-dede-qorqud.sql:/docker-entrypoint-initdb.d/kitabe-dede-qorqud.sql
   app:
     build: .
     restart: always
-    environment:
-      PGUSER: myuser
-      PGPASSWORD: mypassword
-      PGDATABASE: mydb
-      PGHOST: localhost
-      PGPORT: "5432"
     ports:
       - "8080:8080"
     depends_on:
