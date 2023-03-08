@@ -10,13 +10,19 @@ services:
       POSTGRES_HOST: localhost
       POSTGRES_PORT: "5432"
     volumes:
-      - ./kitabe-dede-qorqud.sql:/docker-entrypoint-initdb.d/kitabe-dede-qorqud.sq
+      - ./kitabe-dede-qorqud.sql:/docker-entrypoint-initdb.d/kitabe-dede-qorqud.sql
   app:
     build: .
     environment:
       DEBUG: "true"
+      PGHOST: db
+      PGPORT: "5432"
+      PGUSER: myuser
+      PGPASSWORD: mypassword
+      PGDATABASE: mydb
     deploy:
-    restart: always
+      restart_policy:
+        condition: on-failure
     ports:
       - "8080:8080"
     depends_on:
