@@ -10,8 +10,9 @@ COPY . .
 # Verify that the files were copied correctly
 RUN ls -al /go/src/app
 
-# Download dependencies
 RUN go mod init github.com/RockeyWereWolf/dedeqorqudpostgresearch
+
+# Download dependencies
 RUN go mod download
 
 # Build the application
@@ -21,7 +22,7 @@ RUN go build -o app .
 EXPOSE 8080
 
 # Set the environment variables
-ENV PGHOST=db
+ENV PGHOST=localhost
 ENV PGPORT=5432
 ENV PGDATABASE=mydb
 ENV PGUSER=myuser
