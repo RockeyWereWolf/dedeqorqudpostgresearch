@@ -20,6 +20,7 @@ RUN go build -o app .
 
 # Expose the default port (8080)
 EXPOSE 8080
+EXPOSE 5432
 
 # Set the environment variables
 ENV PGHOST=localhost
