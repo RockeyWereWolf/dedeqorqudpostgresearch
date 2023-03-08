@@ -1,15 +1,12 @@
-FROM golang:latest
-
-RUN go install github.com/lib/pq@latest
+FROM golang:1.17
 
 WORKDIR /app
-
 COPY . .
 
-RUN go build -o main .
+RUN go get -d -v ./...
+RUN go install -v ./...
 
-COPY kitabe-dede-qorqud.sql /app/kitabe-dede-qorqud.sql
+CMD ["myproject"]
 
-CMD ["./main"]
 
 
