@@ -1,18 +1,28 @@
+# Use an official Golang runtime as a parent image
 FROM golang:latest
 
-RUN apk add --no-cache git
+# Set the working directory to /go/src/app
+WORKDIR /go/src/app
 
-WORKDIR /app
+# Copy the current directory contents into the container at /go/src/app
+COPY . /go/src/app
 
-COPY go.mod .
-COPY go.sum .
+# Download dependencies
+RUN go get -d -v ./...
 
-RUN go mod download
+# Install the package
+RUN go install -v ./...
 
-COPY . .
+# Expose the default port (8080)
+EXPOSE 8080
 
-RUN go build -o main .
+# Set the environment variables
+ENV PGHOST=your_database_host
+ENV PGUSER=your_database_user
+ENV PGPASSWORD=your_database_password
+ENV PGDATABASE=your_database_name
+ENV PGPORT=5432
 
-CMD ["./main"]
-
+# Start the application
+CMD ["app"]
 
