@@ -25,5 +25,5 @@ ENV PGUSER=myuser
 ENV PGPASSWORD=mypassword
 
 # Start the application
-CMD ["app"]
+CMD ["/go/bin/app"]
 
