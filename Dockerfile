@@ -26,5 +26,5 @@ ENV PGPASSWORD=mypassword
 
 # Start the application
 RUN chown -R root:root /go/src/app
-CMD ["/go/src/app"]
+CMD ["/go/src/app/app"]
 
