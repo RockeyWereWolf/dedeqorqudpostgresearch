@@ -12,4 +12,4 @@ To enter container:
 
 list running containers with ``docker ps`` 
 
-enter one of them using docker exec -ti <container name>
+enter one of them using ``docker exec -ti <container name>``
