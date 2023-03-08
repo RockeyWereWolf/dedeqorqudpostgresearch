@@ -12,15 +12,16 @@ import (
 
 func main() {
     // Get the database connection parameters from environment variables
-    host := localhost
-    port := 5432
-    user := myuser
-    password := mypassword
-    dbname := mydb
+    host := os.Getenv("PGHOST")
+    port := os.Getenv("PGPORT")
+    user := os.Getenv("PGUSER")
+    password := os.Getenv("PGPASSWORD")
+    dbname := os.Getenv("PGDATABASE")
+    sslmode := os.Getenv("PGSSLMODE")
 
     // Create a connection string using the parameters
-    connStr := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s ",
-        host, port, user, password, dbname)
+    connStr := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=%s",
+        host, port, user, password, dbname, sslmode)
 
     // Open a connection to the database
     db, err := sql.Open("postgres", connStr)
