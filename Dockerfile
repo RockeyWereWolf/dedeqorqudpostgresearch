@@ -1,18 +1,18 @@
-FROM golang:alpine
+FROM golang:latest
 
 RUN apk add --no-cache git
 
-
 WORKDIR /app
 
-RUN go mod download tidy
-RUN go mod tidy
+COPY go.mod .
+COPY go.sum .
+
+RUN go mod download
 
 COPY . .
 
 RUN go build -o main .
 
 CMD ["./main"]
-
 
 
