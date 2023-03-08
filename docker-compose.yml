@@ -1,5 +1,4 @@
 version: '3'
-
 services:
   db:
     image: postgres
@@ -9,18 +8,12 @@ services:
       POSTGRES_PASSWORD: mypassword
       POSTGRES_DB: mydb
     volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/kitabe-dede-qorqud.sql
-    ports:
-      - "5432:5432"
+      - ./your_schema_file.sql:/docker-entrypoint-initdb.d/your_schema_file.sql
   app:
     build: .
-    depends_on:
-      - db
+    restart: always
     ports:
       - "8080:8080"
-    environment:
-      DB_HOST: db
-      DB_PORT: "5432"
-      DB_NAME: mydb
-      DB_USER: myuser
-      DB_PASSWORD: mypassword
+    depends_on:
+      - db
+
