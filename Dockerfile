@@ -1,9 +1,8 @@
 FROM golang:latest
 
-WORKDIR /app
+RUN go get github.com/lib/pq
 
-COPY go.mod go.sum ./
-RUN go mod download
+WORKDIR /app
 
 COPY . .
 
@@ -12,3 +11,5 @@ RUN go build -o main .
 COPY kitabe-dede-qorqud.sql /app/kitabe-dede-qorqud.sql
 
 CMD ["./main"]
+
+
