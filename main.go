@@ -28,6 +28,10 @@ func main() {
         log.Fatal(err)
     }
     defer db.Close()
+    
+    if os.Getenv("DEBUG") == "true" {
+    log.SetLevel(log.DebugLevel)
+    }
 
     /* Read the SQL schema file
     schema, err := ioutil.ReadFile("kitabe-dede-qorqud.sql")
