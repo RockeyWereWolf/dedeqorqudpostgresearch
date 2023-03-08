@@ -14,7 +14,7 @@ RUN ls -al /go/src/app
 RUN go mod init github.com/RockeyWereWolf/dedeqorqudpostgresearch
 RUN go mod download
 RUN go get github.com/lib/pq
-
+RUN go get github.com/sirupsen/logrus
 # Build the application
 RUN go build -o app .
 
