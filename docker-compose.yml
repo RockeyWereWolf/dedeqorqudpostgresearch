@@ -15,7 +15,7 @@ services:
     build: .
     environment:
       DEBUG: "true"
-      PGHOST: db
+      PGHOST: localhost
       PGPORT: "5432"
       PGUSER: myuser
       PGPASSWORD: mypassword
