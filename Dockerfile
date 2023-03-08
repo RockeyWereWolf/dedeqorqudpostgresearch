@@ -8,6 +8,7 @@ WORKDIR /go/src/app
 COPY . /go/src/app
 
 # Download dependencies
+RUN go mod init github.com/RockeyWereWolf/dedeqorqudpostgresearch/
 RUN go get -d -v ./...
 
 # Install the package
