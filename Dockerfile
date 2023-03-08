@@ -17,11 +17,11 @@ RUN go install -v ./...
 EXPOSE 8080
 
 # Set the environment variables
-ENV PGHOST=your_database_host
-ENV PGUSER=your_database_user
-ENV PGPASSWORD=your_database_password
-ENV PGDATABASE=your_database_name
+ENV PGHOST=localhost
 ENV PGPORT=5432
+ENV PGDATABASE=mydb
+ENV PGUSER=myuser
+ENV PGPASSWORD=mypassword
 
 # Start the application
 CMD ["app"]
