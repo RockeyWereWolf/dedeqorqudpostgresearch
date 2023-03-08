@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  database:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: example_password
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  
+  search_engine:
+    image: quay.io/craiggwilson/postgres-tsearch
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_PASSWORD: example_password
+      PGADMIN_PASSWORD: example_password
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data/pgdata
+    ports:
+      - "8080:80"
+  
+  app:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+      - search_engine
