@@ -1,6 +1,7 @@
 FROM golang:alpine
 
 RUN apk add --no-cache git
+RUN go mod tidy
 
 WORKDIR /app
 
