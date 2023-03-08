@@ -8,7 +8,7 @@ WORKDIR /go/src/app
 COPY . /go/src/app
 
 # Download dependencies
-RUN go mod https://github.com/RockeyWereWolf/dedeqorqudpostgresearch
+RUN go mod init https://github.com/RockeyWereWolf/dedeqorqudpostgresearch
 
 # Build the application
 RUN go build -o app .
