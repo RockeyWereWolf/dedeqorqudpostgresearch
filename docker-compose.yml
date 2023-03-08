@@ -13,7 +13,12 @@ services:
       - ./kitabe-dede-qorqud.sql:/docker-entrypoint-initdb.d/kitabe-dede-qorqud.sql
   app:
     build: .
-    restart: always
+    deploy:
+    restart_policy:
+        condition: on-failure
+        delay: 20s
+        max_attempts: 5
+        window: 60s
     ports:
       - "8080:8080"
     depends_on:
