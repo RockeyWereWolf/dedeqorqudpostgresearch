@@ -5,7 +5,7 @@ RUN apk add --no-cache git
 
 WORKDIR /app
 
-RUN go mod download
+RUN go mod download tidy
 RUN go mod tidy
 
 COPY . .
