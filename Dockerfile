@@ -4,11 +4,12 @@ FROM golang:latest
 # Set the working directory to /go/src/app
 WORKDIR /go/src/app
 
+# Copy the current directory contents into the container at /go/src/app
+COPY . /go/src/app
+
 # Download dependencies
 RUN go mod init github.com/RockeyWereWolf/dedeqorqudpostgresearch
-
-# Copy the current directory contents into the container at /go/src/app
-COPY src /go/src/app
+RUN go get -d -v ./...
 
 # Build the application
 RUN go build -o app .
@@ -17,7 +18,7 @@ RUN go build -o app .
 EXPOSE 8080
 
 # Set the environment variables
-ENV PGHOST=db
+ENV PGHOST=localhost
 ENV PGPORT=5432
 ENV PGDATABASE=mydb
 ENV PGUSER=myuser
