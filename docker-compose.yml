@@ -9,8 +9,11 @@ services:
       POSTGRES_DB: mydb
       POSTGRES_HOST: localhost
       POSTGRES_PORT: "5432"
+      PGSSLMODE: require
+      PGSSLROOTCERT: /ssl/server.crt
     volumes:
       - ./kitabe-dede-qorqud.sql:/docker-entrypoint-initdb.d/kitabe-dede-qorqud.sql
+      - ./ssl:/ssl
   app:
     build: .
     deploy:
