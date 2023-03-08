@@ -14,7 +14,7 @@ services:
   app:
     build: .
     deploy:
-    restart: unless-stopped
+    restart: "no"
     ports:
       - "8080:8080"
     depends_on:
