@@ -10,24 +10,5 @@ COPY . .
 # Verify that the files were copied correctly
 RUN ls -al /go/src/app
 
-RUN go mod init github.com/RockeyWereWolf/dedeqorqudpostgresearch
 
-# Download dependencies
-RUN go mod download
-
-# Build the application
-RUN go build -o app .
-
-# Expose the default port (8080)
-EXPOSE 8080
-
-# Set the environment variables
-ENV PGHOST=localhost
-ENV PGPORT=5432
-ENV PGDATABASE=mydb
-ENV PGUSER=myuser
-ENV PGPASSWORD=mypassword
-
-# Start the application
-CMD ["/go/src/app/app"]
 
