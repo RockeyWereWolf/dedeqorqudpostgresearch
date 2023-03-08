@@ -7,15 +7,13 @@ services:
       POSTGRES_USER: myuser
       POSTGRES_PASSWORD: mypassword
       POSTGRES_DB: mydb
-      POSTGRES_HOST: localhost
-      POSTGRES_PORT: "5432"
     volumes:
       - ./kitabe-dede-qorqud.sql:/docker-entrypoint-initdb.d/kitabe-dede-qorqud.sql
   app:
     build: .
     environment:
       DEBUG: "true"
-      PGHOST: localhost
+      PGHOST: db
       PGPORT: "5432"
       PGUSER: myuser
       PGPASSWORD: mypassword
