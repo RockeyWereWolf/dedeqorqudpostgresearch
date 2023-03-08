@@ -1,12 +1,19 @@
-FROM golang:1.17
+FROM golang:alpine
+
+RUN apk add --no-cache git
 
 WORKDIR /app
+
+COPY go.mod .
+COPY go.sum .
+
+RUN go mod download
+
 COPY . .
 
-RUN go get -d -v ./...
-RUN go install -v ./...
+RUN go build -o main .
 
-CMD ["myproject"]
+CMD ["./main"]
 
 
 
