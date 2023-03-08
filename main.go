@@ -4,7 +4,7 @@ import (
     "database/sql"
     "fmt"
     //"io/ioutil"
-    "log"
+    //"log"
     "os"
 
     _ "github.com/lib/pq"
