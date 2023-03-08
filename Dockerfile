@@ -13,6 +13,7 @@ RUN ls -al /go/src/app
 # Download dependencies
 RUN go mod init github.com/RockeyWereWolf/dedeqorqudpostgresearch
 RUN go mod download
+RUN go get github.com/lib/pq
 
 # Build the application
 RUN go build -o app .
