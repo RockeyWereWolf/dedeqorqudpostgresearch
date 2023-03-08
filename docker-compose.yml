@@ -11,6 +11,7 @@ services:
       - ./kitabe-dede-qorqud.sql:/docker-entrypoint-initdb.d/kitabe-dede-qorqud.sql
   app:
     build: .
+    restart: always
     ports:
       - "8080:8080"
     depends_on:
