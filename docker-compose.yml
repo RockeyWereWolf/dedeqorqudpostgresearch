@@ -14,11 +14,7 @@ services:
   app:
     build: .
     deploy:
-    restart_policy:
-        condition: on-failure
-        delay: 20s
-        max_attempts: 5
-        window: 60s
+    restart: on-failure
     ports:
       - "8080:8080"
     depends_on:
