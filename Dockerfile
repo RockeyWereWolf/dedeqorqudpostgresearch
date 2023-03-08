@@ -1,6 +1,6 @@
 FROM golang:latest
 
-RUN go get github.com/lib/pq
+RUN go install
 
 WORKDIR /app
 
