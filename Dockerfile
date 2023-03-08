@@ -10,9 +10,8 @@ COPY . .
 # Verify that the files were copied correctly
 RUN ls -al /go/src/app
 
-RUN go mod init github.com/RockeyWereWolf/dedeqorqudpostgresearch
-
 # Download dependencies
+RUN go mod init github.com/RockeyWereWolf/dedeqorqudpostgresearch
 RUN go mod download
 
 # Build the application
@@ -30,5 +29,4 @@ ENV PGPASSWORD=mypassword
 
 # Start the application
 CMD ["/go/src/app/app"]
-
 
