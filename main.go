@@ -29,7 +29,7 @@ func main() {
     mux := http.NewServeMux()
     
     mux.HandleFunc("/", indexHandler)
-	http.ListenAndServe(":"+8080, mux)
+	http.ListenAndServe(":"+"8080", mux)
     
     // Create a connection string using the parameters
     connStr := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
