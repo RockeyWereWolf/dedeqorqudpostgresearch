@@ -3,6 +3,7 @@ package main
 import (
     "database/sql"
     "time"
+    "net/http"
     "fmt"
     //"io/ioutil"
     //"log"
@@ -12,6 +13,10 @@ import (
     log "github.com/sirupsen/logrus"  
 )
 
+func indexHandler(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("<h1>Hello World!</h1>"))
+}
+
 func main() {
     // Get the database connection parameters from environment variables
     host := os.Getenv("PGHOST")
@@ -19,7 +24,13 @@ func main() {
     user := os.Getenv("PGUSER")
     password := os.Getenv("PGPASSWORD")
     dbname := os.Getenv("PGDATABASE")
-
+    
+    //Web app sample testing
+    mux := http.NewServeMux()
+    
+    mux.HandleFunc("/", indexHandler)
+	http.ListenAndServe(":"+8080, mux)
+    
     // Create a connection string using the parameters
     connStr := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
         host, port, user, password, dbname)
