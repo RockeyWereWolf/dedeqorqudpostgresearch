@@ -5,7 +5,7 @@ import (
     "time"
     "net/http"
     "fmt"
-    //"io/ioutil"
+    "io/ioutil"
     //"log"
     "os"
 
@@ -42,8 +42,8 @@ func main() {
         time.Sleep(time.Second * 10)
     }
 
-    /* Read the SQL schema file
-    schema, err := ioutil.ReadFile("sql/schema.sql")
+    // Read the SQL schema file
+    schema, err := ioutil.ReadFile("sample.sql")
     if err != nil {
         log.Fatal(err)
     }
@@ -52,7 +52,7 @@ func main() {
     _, err = db.Exec(string(schema))
     if err != nil {
         log.Fatal(err) 
-    } */
+    } 
     // Define the HTTP handlers
 	http.HandleFunc("/", homePage)
 	http.HandleFunc("/search", searchHandler)
