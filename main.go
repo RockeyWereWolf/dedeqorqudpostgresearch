@@ -13,11 +13,11 @@ import (
     log "github.com/sirupsen/logrus"  
 )
 
-var db *sql.DB
+//var db *sql.DB
 
 func main() {
     // Get the database connection parameters from environment variables
-    host := "dedeqorqudpostgresearch-db-1"
+    host := os.Getenv("PGHOST")
     port := os.Getenv("PGPORT")
     user := os.Getenv("PGUSER")
     password := os.Getenv("PGPASSWORD")
