@@ -13,7 +13,7 @@ import (
     log "github.com/sirupsen/logrus"  
 )
 
-//var db *sql.DB
+var sdb *sql.DB
 
 func main() {
     // Get the database connection parameters from environment variables
@@ -93,7 +93,7 @@ func performFullTextSearch(searchTerm string) ([]string, error) {
     query := fmt.Sprintf("SELECT text FROM documents WHERE to_tsvector('english', text) @@ to_tsquery('english', '%s')", searchTerm)
 
     // Execute the search query
-    rows, err := db.Query(query)
+    rows, err := sdb.Query(query)
     if err != nil {
         return nil, err
     }
