@@ -13,7 +13,7 @@ import (
     log "github.com/sirupsen/logrus"  
 )
 
-//var db *sql.DB
+var db *sql.DB
 
 func main() {
     // Get the database connection parameters from environment variables
