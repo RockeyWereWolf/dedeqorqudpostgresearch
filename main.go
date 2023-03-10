@@ -43,7 +43,7 @@ func main() {
     }
 
     // Read the SQL schema file
-    schema, err := ioutil.ReadFile("kitabe-dede-qorqud.sql")
+    schema, err := ioutil.ReadFile("sql/schema.sql")
     if err != nil {
         log.Fatal(err)
     }
@@ -63,6 +63,8 @@ func main() {
 	panic(err)
     }
 }
+//Read and execute sql files
+
 //Initial html page layout
 func homePage(w http.ResponseWriter, r *http.Request) {
     // Add the HTML form to get the user's search term
