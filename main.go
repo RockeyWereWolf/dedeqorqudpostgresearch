@@ -38,7 +38,7 @@ func main() {
     log.SetLevel(log.DebugLevel)
     }
 
-    // Read the SQL schema file
+    /* Read the SQL schema file
     schema, err := ioutil.ReadFile("sql/schema.sql")
     if err != nil {
         log.Fatal(err)
@@ -116,3 +116,4 @@ func performFullTextSearch(searchTerm string) ([]string, error) {
 
     return results, nil
 }
+*/
