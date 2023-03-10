@@ -3,9 +3,9 @@ package main
 import (
     "database/sql"
     //"time"
-    "net/http"
+    //"net/http"
     "fmt"
-    "io/ioutil"
+    //"io/ioutil"
     //"log"
     "os"
 
@@ -115,4 +115,4 @@ func performFullTextSearch(searchTerm string) ([]string, error) {
     }
 
     return results, nil
-}
+}*/
