@@ -43,7 +43,7 @@ func main() {
     }
 
     // Read the SQL schema file
-    schema, err := ioutil.ReadFile("sample.sql")
+    schema, err := ioutil.ReadFile("sql/scheme.sql")
     if err != nil {
         log.Fatal(err)
     }
