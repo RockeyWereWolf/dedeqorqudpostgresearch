@@ -116,4 +116,3 @@ func performFullTextSearch(searchTerm string) ([]string, error) {
 
     return results, nil
 }
-*/
