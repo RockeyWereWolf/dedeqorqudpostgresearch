@@ -7,8 +7,8 @@ services:
       POSTGRES_USER: myuser
       POSTGRES_PASSWORD: mypassword
       POSTGRES_DB: mydb
-    volumes:
-      - ./sample.sql:/docker-entrypoint-initdb.d/sample.sql
+    #volumes:
+      #- ./sample.sql:/docker-entrypoint-initdb.d/sample.sql
   app:
     build: .
     environment:
