@@ -8,8 +8,8 @@ services:
       POSTGRES_PASSWORD: mypassword
       POSTGRES_DB: mydb
     volumes:
-      - ./sql/schema.sql:/docker-entrypoint-initdb.d/sql/schema.sql
-      - ./sql/fill.sql:/docker-entrypoint-initdb.d/sql/fill.sql
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+      - ./sql/fill.sql:/docker-entrypoint-initdb.d/fill.sql
   app:
     build: .
     environment:
