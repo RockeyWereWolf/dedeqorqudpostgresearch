@@ -101,7 +101,7 @@ func performFullTextSearch(searchTerm string) ([]string, error) {
 	// Define the search query
 	query := fmt.Sprintf("SELECT text FROM documents WHERE to_tsvector('english', text) @@ to_tsquery('english', '%s')", searchTerm)
         // Execute the search query
-        rows, err := sdb.Query(query)
+        rows, err := db.Query(query)
         if err != nil {
             return nil, err
         }
