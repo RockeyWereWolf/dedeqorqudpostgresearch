@@ -6,7 +6,7 @@ Project will be implemented in a docker, so here is how to build:
 
 clone repository
 
-run ``docker-compose up -d --build``
+run ``docker compose up -d --build``
 
 To enter container:
 
