@@ -42,16 +42,16 @@ func main() {
     if err != nil {
         log.Fatal(err) 
     } 
-     // Define the HTTP handlers
+    // Define the HTTP handlers
     http.HandleFunc("/", homePageHandler(db))
     http.HandleFunc("/search", searchHandler(db))
     // Start the HTTP server
     err = http.ListenAndServe(":8080", nil)
     if err != nil {
-	panic(err)
+        panic(err)
     }
 }
-//Read and execute sql files
+
 //Initial html page layout
 func homePageHandler(db *sql.DB) http.HandlerFunc {
     return func(w http.ResponseWriter, r *http.Request) {
