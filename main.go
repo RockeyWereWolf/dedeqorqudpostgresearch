@@ -28,7 +28,7 @@ func main() {
         log.Fatal(err)
     }
     defer sdb.Close()
-    
+    fmt.Println("ex")
     if os.Getenv("DEBUG") == "true" {
     log.SetLevel(log.DebugLevel)
     }
@@ -101,4 +101,5 @@ func performFullTextSearch(searchTerm string) ([]string, error) {
         return nil, err
     }
     return results, nil
+    fmt.Println("ex2")
 }
