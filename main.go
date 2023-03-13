@@ -24,8 +24,7 @@ func main() {
         host, port, user, password, dbname)
     // Open a connection to the database
     db, err := sql.Open("postgres", connStr)
-    if err != nil {
-	log.Debugf("this part is executed")     
+    if err != nil {   
         log.Fatal(err)     
     }
     defer db.Close()
