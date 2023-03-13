@@ -23,11 +23,12 @@ func main() {
     connStr := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
         host, port, user, password, dbname)
     // Open a connection to the database
-    sdb, err := sql.Open("postgres", connStr)
+    db, err := sql.Open("postgres", connStr)
     if err != nil {
-        log.Fatal(err)
+	log.Debugf("this part is executed")     
+        log.Fatal(err)     
     }
-    defer sdb.Close()
+    defer db.Close()
     
     if os.Getenv("DEBUG") == "true" {
     log.SetLevel(log.DebugLevel)
