@@ -38,7 +38,7 @@ func main() {
         log.Fatal(err)
     }
     // Execute the SQL schema file
-    _, err = sdb.Exec(string(schema))
+    _, err = db.Exec(string(schema))
     if err != nil {
         log.Fatal(err) 
     } 
