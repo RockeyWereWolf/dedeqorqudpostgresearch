@@ -5,7 +5,7 @@ import (
     "net/http"
     "fmt"
     "io/ioutil"
-    "log"
+    //"log"
     "os"
     _ "github.com/lib/pq"
     log "github.com/sirupsen/logrus"  
