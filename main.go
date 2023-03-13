@@ -32,6 +32,7 @@ func main() {
     if os.Getenv("DEBUG") == "true" {
     log.SetLevel(log.DebugLevel)
     }
+}
     /* Read the SQL schema file
     schema, err := ioutil.ReadFile("sql/schema.sql")
     if err != nil {
