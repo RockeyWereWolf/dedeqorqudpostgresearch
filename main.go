@@ -100,6 +100,6 @@ func performFullTextSearch(searchTerm string) ([]string, error) {
     if err != nil {
         return nil, err
     }
-
     return results, nil
-} */
+}
+*/
