@@ -13,7 +13,7 @@ import (
 
 func main() {
 	// Get the database connection parameters from environment variables
-	host := os.Getenv("PGHOST")
+	host := "dedeqorqudpostgresearch-db-1"
 	port := os.Getenv("PGPORT")
 	user := os.Getenv("PGUSER")
 	password := os.Getenv("PGPASSWORD")
@@ -82,7 +82,7 @@ func searchHandler(w http.ResponseWriter, r *http.Request) {
 // Performing PostgreSQL full text search on the response
 func performFullTextSearch(searchTerm string) ([]string, error) {
 	// Get the database connection parameters from environment variables
-	host := os.Getenv("PGHOST")
+	host := "dedeqorqudpostgresearch-db-1"
 	port := os.Getenv("PGPORT")
 	user := os.Getenv("PGUSER")
 	password := os.Getenv("PGPASSWORD")
