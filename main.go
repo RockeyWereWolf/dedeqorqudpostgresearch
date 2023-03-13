@@ -2,10 +2,10 @@ package main
 import (
     "database/sql"
     //"time"
-    //"net/http"
+    "net/http"
     "fmt"
-    //"io/ioutil"
-    //"log"
+    "io/ioutil"
+    "log"
     "os"
     _ "github.com/lib/pq"
     log "github.com/sirupsen/logrus"  
@@ -32,8 +32,7 @@ func main() {
     if os.Getenv("DEBUG") == "true" {
     log.SetLevel(log.DebugLevel)
     }
-}
-    /* Read the SQL schema file
+    // Read the SQL schema file
     schema, err := ioutil.ReadFile("sql/schema.sql")
     if err != nil {
         log.Fatal(err)
@@ -103,4 +102,3 @@ func performFullTextSearch(searchTerm string) ([]string, error) {
     }
     return results, nil
 }
-*/
