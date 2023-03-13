@@ -12,7 +12,6 @@ import (
 )
 var sdb *sql.DB
 func main() {
-    sdb = db 	
     // Get the database connection parameters from environment variables
     host := os.Getenv("PGHOST")
     port := os.Getenv("PGPORT")
@@ -24,11 +23,11 @@ func main() {
     connStr := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
         host, port, user, password, dbname)
     // Open a connection to the database
-    db, err := sql.Open("postgres", connStr)
+    sdb, err := sql.Open("postgres", connStr)
     if err != nil {
         log.Fatal(err)
     }
-    defer db.Close()
+    defer sdb.Close()
     
     if os.Getenv("DEBUG") == "true" {
     log.SetLevel(log.DebugLevel)
@@ -39,7 +38,7 @@ func main() {
         log.Fatal(err)
     }
     // Execute the SQL schema file
-    _, err = db.Exec(string(schema))
+    _, err = sdb.Exec(string(schema))
     if err != nil {
         log.Fatal(err) 
     } 
