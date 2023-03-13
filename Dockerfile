@@ -23,7 +23,7 @@ EXPOSE 8080
 EXPOSE 5432
 
 # Set the environment variables
-ENV PGHOST=dedeqorqudpostgresearch-db-1
+ENV PGHOST=db
 ENV PGPORT=5432
 ENV PGDATABASE=mydb
 ENV PGUSER=myuser
