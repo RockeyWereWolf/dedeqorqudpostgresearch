@@ -44,7 +44,7 @@ func main() {
     } 
      // Define the HTTP handlers
     http.HandleFunc("/", homePageHandler(db))
-    http.HandleFunc("/search", searchHandler(db)
+    http.HandleFunc("/search", searchHandler(db))
     // Start the HTTP server
     err = http.ListenAndServe(":8080", nil)
     if err != nil {
