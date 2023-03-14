@@ -77,7 +77,7 @@ func main() {
 
 		// Execute the full-text search query
 		rows, err := db.Query(`
-			SELECT id, title, main_character, content, ts_headline(body, q) AS snippet
+			SELECT id, title, main_character, content, ts_headline(content, q) AS snippet
 			FROM books, to_tsquery($1) AS q
 			WHERE to_tsvector('english', content) @@ q
 		`, query)
