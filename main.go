@@ -51,6 +51,7 @@ func main() {
 		if _, err := db.Exec(stmt); err != nil {
 			log.Fatal(err)
 		}
+	}
 	
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
