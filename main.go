@@ -108,7 +108,7 @@ func main() {
 				<div>
 					<h3>Document #%d</h3>
 					<p>%s</p>
-					<p><em>%s</em></p>
+					<!--<p><em>%s</em></p>--!>
 				</div>
 			`, title, snippet)
 		}
