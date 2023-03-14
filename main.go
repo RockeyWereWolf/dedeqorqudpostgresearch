@@ -90,24 +90,6 @@ func main() {
 		}
 		defer rows.Close()
 
-		func ordinalIndicator(num int) string {
-			switch num % 10 {
-			case 1:
-				if num%100 != 11 {
-					return "st"
-				}
-			case 2:
-				if num%100 != 12 {
-					return "nd"
-				}
-			case 3:
-				if num%100 != 13 {
-					return "rd"
-				}
-			}
-			return "th"
-		}
-
 		// Display the search results in an HTML page
 		fmt.Fprintf(w, `
 			<html>
@@ -162,6 +144,23 @@ func main() {
 		</html>
 	`)
 })
+    func ordinalIndicator(num int) string {
+	switch num % 10 {
+		case 1:
+			if num%100 != 11 {
+				return "st"
+			}
+		case 2:
+			if num%100 != 12 {
+				return "nd"
+			}
+		case 3:
+			if num%100 != 13 {
+				return "rd"
+			}
+		}
+		return "th"
+	}
 	// Start the HTTP server and listen for incoming requests
 	addr := ":8080"
 	log.Infof("Starting server at %s", addr)
