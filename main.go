@@ -106,7 +106,7 @@ func main() {
 			}
 			fmt.Fprintf(w, `
 				<div>
-					<h3>Document #%d</h3>
+					<h3>Book #%d#st</h3>
 					<p><em>%s</em></p>
 					<p>%s</p>
 				</div>
