@@ -7,6 +7,8 @@ import (
 	"os"
 	"strings"
 	"io/ioutil"
+	"math/rand"
+        "strconv"
 
 	_ "github.com/lib/pq"
 	log "github.com/sirupsen/logrus"
