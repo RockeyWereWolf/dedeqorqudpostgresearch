@@ -75,13 +75,31 @@ func main() {
 			`)
 			return
 		}
-	
+	    // Split the search query into individual terms
+	    terms := strings.Split(query, " ")
+	    if len(terms) == 0 {
+		// Display an error message if no terms were provided
+		fmt.Fprint(w, `
+			<html>
+				<head><title>Search Results</title></head>
+				<body>
+					<h1>Search Results</h1>
+					<p>No search terms provided</p>
+				</body>
+			</html>
+		`)
+		return
+	    }
+
+	    // Construct the tsquery expression for the search terms
+	    tsquery := strings.Join(terms, " & ")
+
 		// Execute the full-text search query
         rows, err := db.Query(`
             SELECT id, title, main_character, content, ts_headline(content, q, 'StartSel = <mark>, StopSel = </mark>, MaxWords = 100, MinWords = 10, ShortWord = 3, HighlightAll = true') AS snippet
             FROM books, to_tsquery($1) AS q
             WHERE to_tsvector('english', content) @@ q
-        `, query)
+        `, tsquery)
         if err != nil {
             http.Error(w, "Failed to execute query", http.StatusInternalServerError)
             log.Error(err)
