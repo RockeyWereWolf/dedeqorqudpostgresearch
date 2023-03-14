@@ -32,6 +32,17 @@ func main() {
 	if os.Getenv("DEBUG") == "true" {
 		log.SetLevel(log.DebugLevel)
 	}
+	
+        // Read the SQL schema file
+	schema, err := ioutil.ReadFile("sql/schema.sql")
+	if err != nil {
+		log.Fatal(err)
+	}
+	// Execute the SQL schema file
+	_, err = db.Exec(string(schema))
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		// Parse the search query from the request parameters
