@@ -34,16 +34,24 @@ func main() {
 		log.SetLevel(log.DebugLevel)
 	}
 	
-        // Read the SQL schema file
-	schema, err := ioutil.ReadFile("sql/schema.sql")
+        // Read the SQL file containing the sample data
+	data, err := ioutil.ReadFile("sample.sql")
 	if err != nil {
 		log.Fatal(err)
 	}
-	// Execute the SQL schema file
-	_, err = db.Exec(string(schema))
-	if err != nil {
-		log.Fatal(err)
-	}
+
+	// Split the file contents into individual SQL statements
+	statements := strings.Split(string(data), ";")
+
+	// Execute each SQL statement to insert data into the documents table
+	for _, stmt := range statements {
+		if strings.TrimSpace(stmt) == "" {
+			continue
+		}
+		if _, err := db.Exec(stmt); err != nil {
+			log.Fatal(err)
+		}
+	
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		// Parse the search query from the request parameters
@@ -68,9 +76,9 @@ func main() {
 
 		// Execute the full-text search query
 		rows, err := db.Query(`
-			SELECT id, body, ts_headline(body, q) AS snippet
-			FROM documents, to_tsquery($1) AS q
-			WHERE to_tsvector('english', body) @@ q
+			SELECT id, title, main_character, content, ts_headline(body, q) AS snippet
+			FROM books, to_tsquery($1) AS q
+			WHERE to_tsvector('english', content) @@ q
 		`, query)
 		if err != nil {
 			http.Error(w, "Failed to execute query", http.StatusInternalServerError)
