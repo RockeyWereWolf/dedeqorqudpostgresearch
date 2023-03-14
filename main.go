@@ -8,7 +8,7 @@ import (
 	"strings"
 	"io/ioutil"
 	//"math/rand"
-        "strconv"
+    "strconv"
 
 	_ "github.com/lib/pq"
 	log "github.com/sirupsen/logrus"
@@ -76,99 +76,62 @@ func main() {
 		}
 	
 		// Execute the full-text search query
-		rows, err := db.Query(`
-			SELECT id, title, main_character, content, ts_headline(content, q, 'StartSel = <mark>, StopSel = </mark>, MaxWords = 100, MinWords = 10, ShortWord = 3, HighlightAll = true') AS snippet
-			FROM books, to_tsquery($1) AS q
-			WHERE to_tsvector('english', content) @@ q
-		`, query)
-		if err != nil {
-			http.Error(w, "Failed to execute query", http.StatusInternalServerError)
-			log.Error(err)
-			return
-		}
-		defer rows.Close()
-		// Display the search results in an HTML page
-	fmt.Fprintf(w, `
-	<html>
-		<head><title>Search Results</title></head>
-		<body>
-			<h1>Search Results</h1>
-			<p>Showing results for: %q</p>
+rows, err := db.Query(`
+SELECT id, title, main_character, content, ts_headline(content, q, 'StartSel = <mark>, StopSel = </mark>, MaxWords = 100, MinWords = 10, ShortWord = 3, HighlightAll = true') AS snippet
+FROM books, to_tsquery($1) AS q
+WHERE to_tsvector('english', content) @@ q
 `, query)
+if err != nil {
+http.Error(w, "Failed to execute query", http.StatusInternalServerError)
+log.Error(err)
+return
+}
+defer rows.Close()
 
-// Loop through the search results
-for i, row := range rows {
-	var (
-		id             int
-		title          string
-		mainCharacter  string
-		content        string
-		highlighted    string
-		sentenceNumber int
-		foundIn        []string
-	)
-
-	// Parse the row values
-	err := row.Scan(&id, &title, &mainCharacter, &content, &highlighted)
-	if err != nil {
-		http.Error(w, "Failed to scan row", http.StatusInternalServerError)
-		log.Error(err)
-		return
-	}
-
-	// Split the highlighted text into sentences
-	sentences := strings.Split(highlighted, ".")
-
-	// Find the sentences that contain the search query
-	for i, sentence := range sentences {
-		if strings.Contains(sentence, query) {
-			foundIn = append(foundIn, sentence)
-			if sentenceNumber == 0 {
-				sentenceNumber = i + 1
-			}
-		}
-	}
-
-	// Format the sentence number
-	var sentenceNumberStr string
-	switch sentenceNumber {
-	case 1:
-		sentenceNumberStr = "1st sentence"
-	case 2:
-		sentenceNumberStr = "2nd sentence"
-	case 3:
-		sentenceNumberStr = "3rd sentence"
-	default:
-		sentenceNumberStr = fmt.Sprintf("%dth sentence", sentenceNumber)
-	}
-
-	// Format the list of sentences where the query was found
-	foundInStr := strings.Join(foundIn, ". ")
-
-	// Format the number of sentences in the content
-	numSentences := strings.Count(content, ".") + strings.Count(content, "!") + strings.Count(content, "?")
-	numSentencesStr := strconv.Itoa(numSentences)
-
-	// Display the search result in an HTML block
-	fmt.Fprintf(w, `
-		<div>
-			<h3>Book %d</h3>
-			<p><em>%s</em></p>
-			<p>Found in %s</p>
-			<p>%s</p>
-		</div>
-	`, id, title, sentenceNumberStr, foundInStr)
-
-	if i == 0 {
-		fmt.Fprintf(w, `
-			<p>%s sentences found</p>
-		`, numSentencesStr)
+// Display the search results in an HTML page
+fmt.Fprintf(w, `
+<html>
+	<head><title>Search Results</title></head>
+	<body>
+		<h1>Search Results</h1>
+		<p>Showing results for: %q</p>
+`, query)
+for rows.Next() {
+var id int
+var title, main_character, content, snippet string
+if err := rows.Scan(&id, &title, &main_character, &content, &snippet); err != nil {
+	http.Error(w, "Failed to scan row", http.StatusInternalServerError)
+	log.Error(err)
+	return
+}
+// Split the snippet into sentences
+sentences := strings.Split(snippet, ".")
+var matchedSentences []string
+for i, sentence := range sentences {
+	if strings.Contains(sentence, "<mark>") {
+		matchedSentences = append(matchedSentences, fmt.Sprintf("%d%s", i+1, getOrdinalSuffix(i+1)))
 	}
 }
 
+numSentences := strings.Count(content, ".") + strings.Count(content, "!") + strings.Count(content, "?")
+numSentencesStr := strconv.Itoa(numSentences)
 fmt.Fprintf(w, `
-		</body>
-	</html>
+	<div>
+		<h3>Book %d</h3>
+		<p><em>%s</em></p>
+		<p>Found in %d sentence(s): %s</p>
+		<p>%s</p>
+	</div>
+`, id, title, len(matchedSentences), strings.Join(matchedSentences, ", "), snippet)
+}
+if err := rows.Err(); err != nil {
+http.Error(w, "Failed to iterate over results", http.StatusInternalServerError)
+log.Error(err)
+return
+}
+fmt.Fprintf(w, `
+	</body>
+</html>
 `)
 })
 	// Start the HTTP server and listen for incoming requests
