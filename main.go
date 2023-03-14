@@ -77,7 +77,7 @@ func main() {
 
 		// Execute the full-text search query
 	rows, err := db.Query(`
-		SELECT id, title, main_character, content, ts_headline(content, q, 'StartSel = <mark>, StopSel = </mark>, \ MaxWords = 100, MinWords = 10, ShortWord = 3, HighlightAll = true') AS snippet
+		SELECT id, title, main_character, content, ts_headline(content, q, 'StartSel = <mark>, StopSel = </mark>, MaxWords = 100, MinWords = 10, ShortWord = 3, HighlightAll = true') AS snippet
 		FROM books, to_tsquery($1) AS q
 		WHERE to_tsvector('english', content) @@ q
 	`, query)
@@ -128,9 +128,9 @@ func main() {
 		return
 	}
 	fmt.Fprintf(w, `
-			</body>
-		</html>
-	`)
+		</body>
+	</html>
+`)
 	// Start the HTTP server and listen for incoming requests
 	addr := ":8080"
 	log.Infof("Starting server at %s", addr)
