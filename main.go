@@ -130,8 +130,7 @@ func main() {
 	fmt.Fprintf(w, `
 			</body>
 		</html>
-	`)
-	})
+	`)}
 	// Start the HTTP server and listen for incoming requests
 	addr := ":8080"
 	log.Infof("Starting server at %s", addr)
