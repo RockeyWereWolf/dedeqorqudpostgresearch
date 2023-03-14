@@ -7,8 +7,6 @@ import (
 	"os"
 	"strings"
 	"io/ioutil"
-	"math/rand"
-        "strconv"
 
 	_ "github.com/lib/pq"
 	log "github.com/sirupsen/logrus"
@@ -106,14 +104,15 @@ func main() {
 			log.Error(err)
 			return
 		}
-		sentences := strings.Split(snippet, ".")
-		var startSentence int
-		if len(sentences) > 1 {
-			startSentence = rand.Intn(len(sentences) - 1)
+		sentences := strings.FieldsFunc(snippet, func(r rune) bool {
+			return r == '.' || r == '!' || r == '?'
+		})
+		numSentences := len(sentences)
+		if numSentences == 0 {
+			continue
 		}
+		startSentence := rand.Intn(numSentences)
 		snippet = sentences[startSentence]
-
-		numSentences := strings.Count(content, ".") + strings.Count(content, "!") + strings.Count(content, "?")
 		numSentencesStr := strconv.Itoa(numSentences)
 		fmt.Fprintf(w, `
 			<div>
