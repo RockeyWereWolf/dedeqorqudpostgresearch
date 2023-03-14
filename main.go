@@ -8,7 +8,7 @@ import (
 	"strings"
 	"io/ioutil"
 	//"math/rand"
-        "strconv"
+    "strconv"
 
 	_ "github.com/lib/pq"
 	log "github.com/sirupsen/logrus"
@@ -56,7 +56,7 @@ func main() {
 	}
 	
 
-        ttp.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	ttp.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		// Parse the search query from the request parameters
 		query := strings.TrimSpace(r.URL.Query().Get("q"))
 		if query == "" {
@@ -89,6 +89,24 @@ func main() {
 			return
 		}
 		defer rows.Close()
+
+		func ordinalIndicator(num int) string {
+			switch num % 10 {
+			case 1:
+				if num%100 != 11 {
+					return "st"
+				}
+			case 2:
+				if num%100 != 12 {
+					return "nd"
+				}
+			case 3:
+				if num%100 != 13 {
+					return "rd"
+				}
+			}
+			return "th"
+		}
 
 		// Display the search results in an HTML page
 		fmt.Fprintf(w, `
