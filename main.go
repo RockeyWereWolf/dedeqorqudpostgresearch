@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 	"io/ioutil"
-	"math/rand"
+	//"math/rand"
         "strconv"
 
 	_ "github.com/lib/pq"
@@ -89,6 +89,21 @@ func main() {
 			return
 		}
 		defer rows.Close()
+
+		func getSentenceSuffix(n int) string {
+			if n > 3 || n < 1 {
+				return "th"
+			}
+			switch n {
+			case 1:
+				return "st"
+			case 2:
+				return "nd"
+			case 3:
+				return "rd"
+			}
+			return ""
+		}
 
 		// Display the search results in an HTML page
 		fmt.Fprintf(w, `
