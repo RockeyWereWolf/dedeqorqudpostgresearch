@@ -56,7 +56,7 @@ func main() {
 	}
 	
 
-        http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+        ttp.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		// Parse the search query from the request parameters
 		query := strings.TrimSpace(r.URL.Query().Get("q"))
 		if query == "" {
@@ -90,21 +90,6 @@ func main() {
 		}
 		defer rows.Close()
 
-		func getSentenceSuffix(n int) string {
-			if n > 3 || n < 1 {
-				return "th"
-			}
-			switch n {
-			case 1:
-				return "st"
-			case 2:
-				return "nd"
-			case 3:
-				return "rd"
-			}
-			return ""
-		}
-
 		// Display the search results in an HTML page
 		fmt.Fprintf(w, `
 			<html>
@@ -121,15 +106,24 @@ func main() {
 				log.Error(err)
 				return
 			}
-			sentences := strings.Split(snippet, ".")
-			var validSentences []string
-			for i, sentence := range sentences {
-				if strings.Contains(strings.ToLower(sentence), strings.ToLower(query)) {
-					validSentences = append(validSentences, fmt.Sprintf("%d%s", i+1, getSentenceSuffix(i+1)))
+			sentences := strings.Split(content, ".")
+			var matchingSentences []int
+			for i, s := range sentences {
+				if strings.Contains(s, query) {
+					matchingSentences = append(matchingSentences, i)
 				}
 			}
-			numSentences := strconv.Itoa(len(validSentences))
-			snippet = strings.Join(validSentences, ". ")
+
+			numSentences := len(matchingSentences)
+			numSentencesStr := strconv.Itoa(numSentences)
+
+			var sentenceStr string
+			for _, s := range matchingSentences {
+				sentenceStr += fmt.Sprintf("%d%s", s+1, ordinalIndicator(s+1))
+				if s < len(matchingSentences)-1 {
+					sentenceStr += ", "
+				}
+			}
 
 			fmt.Fprintf(w, `
 				<div>
@@ -138,7 +132,7 @@ func main() {
 					<p>Found in %s sentence(s): %s</p>
 					<p>%s</p>
 				</div>
-			`, id, title, numSentences, strings.Join(validSentences, ", "), snippet)
+			`, id, title, numSentencesStr, sentenceStr, snippet)
 		}
 		if err := rows.Err(); err != nil {
 			http.Error(w, "Failed to iterate over results", http.StatusInternalServerError)
