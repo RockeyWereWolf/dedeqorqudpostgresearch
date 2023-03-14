@@ -110,7 +110,7 @@ func main() {
 					<p>%s</p>
 					<p><em>%s</em></p>
 				</div>
-			`, id, snippet, content)
+			`, title, snippet)
 		}
 		if err := rows.Err(); err != nil {
 			http.Error(w, "Failed to iterate over results", http.StatusInternalServerError)
