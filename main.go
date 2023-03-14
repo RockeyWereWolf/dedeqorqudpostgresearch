@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	"io/ioutil"
-	"net/http"
+	//"net/http"
 	"os"
 
 	_ "github.com/lib/pq"
