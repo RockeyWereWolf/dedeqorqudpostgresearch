@@ -55,8 +55,7 @@ func main() {
 		}
 	}
 	
-
-	ttp.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+        http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		// Parse the search query from the request parameters
 		query := strings.TrimSpace(r.URL.Query().Get("q"))
 		if query == "" {
@@ -78,89 +77,82 @@ func main() {
 		}
 
 		// Execute the full-text search query
-		rows, err := db.Query(`
-			SELECT id, title, main_character, content, ts_headline(content, q, 'StartSel = <mark>, StopSel = </mark>, MaxWords = 100, MinWords = 10, ShortWord = 3, HighlightAll = true') AS snippet
-			FROM books, to_tsquery($1) AS q
-			WHERE to_tsvector('english', content) @@ q
-		`, query)
-		if err != nil {
-			http.Error(w, "Failed to execute query", http.StatusInternalServerError)
+	rows, err := db.Query(`
+		SELECT id, title, main_character, content, ts_headline(content, q, 'StartSel = <mark>, StopSel = </mark>, MaxWords = 100, MinWords = 10, ShortWord = 3, HighlightAll = true') AS snippet
+		FROM books, to_tsquery($1) AS q
+		WHERE to_tsvector('english', content) @@ q
+	`, query)
+	if err != nil {
+		http.Error(w, "Failed to execute query", http.StatusInternalServerError)
+		log.Error(err)
+		return
+	}
+	defer rows.Close()
+
+	// Display the search results in an HTML page
+	fmt.Fprintf(w, `
+		<html>
+			<head><title>Search Results</title></head>
+			<body>
+				<h1>Search Results</h1>
+				<p>Showing results for: %q</p>
+	`, query)
+	for rows.Next() {
+		var id int
+		var title, main_character, content, snippet string
+		if err := rows.Scan(&id, &title, &main_character, &content, &snippet); err != nil {
+			http.Error(w, "Failed to scan row", http.StatusInternalServerError)
 			log.Error(err)
 			return
 		}
-		defer rows.Close()
-
-		// Display the search results in an HTML page
-		fmt.Fprintf(w, `
-			<html>
-				<head><title>Search Results</title></head>
-				<body>
-					<h1>Search Results</h1>
-					<p>Showing results for: %q</p>
-		`, query)
-		for rows.Next() {
-			var id int
-			var title, main_character, content, snippet string
-			if err := rows.Scan(&id, &title, &main_character, &content, &snippet); err != nil {
-				http.Error(w, "Failed to scan row", http.StatusInternalServerError)
-				log.Error(err)
-				return
-			}
-			sentences := strings.Split(content, ".")
-			var matchingSentences []int
-			for i, s := range sentences {
-				if strings.Contains(s, query) {
-					matchingSentences = append(matchingSentences, i)
-				}
-			}
-
-			numSentences := len(matchingSentences)
-			numSentencesStr := strconv.Itoa(numSentences)
-
-			var sentenceStr string
-			for _, s := range matchingSentences {
-				sentenceStr += fmt.Sprintf("%d%s", s+1, ordinalIndicator(s+1))
-				if s < len(matchingSentences)-1 {
-					sentenceStr += ", "
-				}
-			}
-
-			fmt.Fprintf(w, `
-				<div>
-					<h3>Book %dst</h3>
-					<p><em>%s</em></p>
-					<p>Found in %s sentence(s): %s</p>
-					<p>%s</p>
-				</div>
-			`, id, title, numSentencesStr, sentenceStr, snippet)
+		var sentences []string
+		if len(snippet) > 0 {
+			sentences = strings.Split(snippet, ". ")
+		} else {
+			sentences = strings.Split(content, ". ")
 		}
-		if err := rows.Err(); err != nil {
-			http.Error(w, "Failed to iterate over results", http.StatusInternalServerError)
-			log.Error(err)
-			return
+		var foundSentences []string
+		for i, sentence := range sentences {
+			if strings.Contains(sentence, query) {
+				foundSentences = append(foundSentences, fmt.Sprintf("%d%s", i+1, getOrdinalSuffix(i+1)))
+			}
 		}
+
+		numSentencesStr := strconv.Itoa(len(foundSentences))
+		snippet = strings.Join(foundSentences, ", ")
 		fmt.Fprintf(w, `
-			</body>
-		</html>
-	`)
+			<div>
+				<h3>Book %dst</h3>
+				<p><em>%s</em></p>
+				<p>Found in %s sentence(s): %s</p>
+			</div>
+		`, id, title, numSentencesStr, snippet)
+	}
+	if err := rows.Err(); err != nil {
+		http.Error(w, "Failed to iterate over results", http.StatusInternalServerError)
+		log.Error(err)
+		return
+	}
+	fmt.Fprintf(w, `
+		</body>
+	</html>
+`)
 })
-    func ordinalIndicator(num int) string {
-	switch num % 10 {
-		case 1:
-			if num%100 != 11 {
-				return "st"
-			}
-		case 2:
-			if num%100 != 12 {
-				return "nd"
-			}
-		case 3:
-			if num%100 != 13 {
-				return "rd"
-			}
-		}
+    func getOrdinalSuffix(num int) string {
+	if num >= 11 && num <= 13 {
 		return "th"
 	}
+	switch num % 10 {
+	case 1:
+		return "st"
+	case 2:
+		return "nd"
+	case 3:
+		return "rd"
+	default:
+		return "th"
+	}
+}
 	// Start the HTTP server and listen for incoming requests
 	addr := ":8080"
 	log.Infof("Starting server at %s", addr)
