@@ -4,7 +4,7 @@ CREATE TABLE books (
   main_character TEXT NOT NULL,
   content TEXT NOT NULL
 );
-INSERT INTO books (title, main_character, prolugue)
+INSERT INTO books (title, main_character, content)
 VALUES ('Boghach Khan Son of Dirse Khan','Boghach Khan','One day Bayindir Khan son of Kam Ghan rose up from his
 place. He had his striped parasol set up on the earth’s face, his
 many-coloured pavilion reared up to the face of the sky. In a
