@@ -4,24 +4,6 @@ CREATE TABLE books (
   main_character TEXT NOT NULL,
   content TEXT NOT NULL
 );
-/*
-CREATE TABLE episodes (
-  id SERIAL PRIMARY KEY,
-  title TEXT NOT NULL,
-  book_id INTEGER NOT NULL,
-  episode_text TEXT NOT NULL,
-  FOREIGN KEY (book_id) REFERENCES books(id)
-);
-
-CREATE TABLE characters (
-  id SERIAL PRIMARY KEY,
-  name TEXT NOT NULL,
-  book_id INTEGER NOT NULL,
-  episode_id INTEGER NOT NULL,
-  FOREIGN KEY (book_id) REFERENCES books(id),
-  FOREIGN KEY (episode_id) REFERENCES episodes(id)
-);
-*/
 INSERT INTO books (title, main_character, prolugue)
 VALUES ('Boghach Khan Son of Dirse Khan','Boghach Khan','One day Bayindir Khan son of Kam Ghan rose up from his
 place. He had his striped parasol set up on the earth’s face, his
