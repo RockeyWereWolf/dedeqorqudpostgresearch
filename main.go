@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"strings"
+	"io/ioutil"
 
 	_ "github.com/lib/pq"
 	log "github.com/sirupsen/logrus"
