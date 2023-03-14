@@ -99,7 +99,7 @@ func main() {
 		for rows.Next() {
 			var id int
 			var body, snippet string
-			if err := rows.Scan(&id, &body, &snippet); err != nil {
+			if err := rows.Scan(&id, &title, &main_character, &content, &snippet); err != nil {
 				http.Error(w, "Failed to scan row", http.StatusInternalServerError)
 				log.Error(err)
 				return
