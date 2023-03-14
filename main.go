@@ -107,10 +107,10 @@ func main() {
 			fmt.Fprintf(w, `
 				<div>
 					<h3>Document #%d</h3>
+					<p><em>%s</em></p>
 					<p>%s</p>
-					<!--<p><em>%s</em></p>--!>
 				</div>
-			`, title, snippet)
+			`, id, title, snippet)
 		}
 		if err := rows.Err(); err != nil {
 			http.Error(w, "Failed to iterate over results", http.StatusInternalServerError)
