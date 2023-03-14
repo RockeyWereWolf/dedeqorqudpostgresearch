@@ -104,25 +104,39 @@ if err := rows.Scan(&id, &title, &main_character, &content, &snippet); err != ni
 	log.Error(err)
 	return
 }
-// Split the snippet into sentences
-sentences := strings.Split(snippet, ".")
-var matchedSentences []string
+
+// Count the number of sentences in the content
+sentences := strings.Split(content, ".")
+numSentences := len(sentences)
+
+// Find the sentences containing the search query
+var matches []int
 for i, sentence := range sentences {
-	if strings.Contains(sentence, "<mark>") {
-		matchedSentences = append(matchedSentences, fmt.Sprintf("%d%s", i+1, getOrdinalSuffix(i+1)))
+	if strings.Contains(sentence, query) {
+		matches = append(matches, i)
 	}
 }
 
-numSentences := strings.Count(content, ".") + strings.Count(content, "!") + strings.Count(content, "?")
-numSentencesStr := strconv.Itoa(numSentences)
+// Display the search result for the current book
 fmt.Fprintf(w, `
 	<div>
 		<h3>Book %d</h3>
 		<p><em>%s</em></p>
-		<p>Found in %d sentence(s): %s</p>
-		<p>%s</p>
-	</div>
-`, id, title, len(matchedSentences), strings.Join(matchedSentences, ", "), snippet)
+		<p>Found in %d sentence(s)</p>
+`, id, title, len(matches))
+for _, match := range matches {
+	sentence := sentences[match]
+	// Highlight the search query in the sentence
+	sentence = strings.ReplaceAll(sentence, query, "<mark>"+query+"</mark>")
+	fmt.Fprintf(w, `
+		<p>%d. %s</p>
+	`, match+1, sentence)
+}
+fmt.Fprintf(w, `
+	<p>Out of %d sentence(s)</p>
+	<p>%s</p>
+</div>
+`, numSentences, snippet)
 }
 if err := rows.Err(); err != nil {
 http.Error(w, "Failed to iterate over results", http.StatusInternalServerError)
@@ -130,7 +144,7 @@ log.Error(err)
 return
 }
 fmt.Fprintf(w, `
-	</body>
+</body>
 </html>
 `)
 })
