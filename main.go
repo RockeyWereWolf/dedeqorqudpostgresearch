@@ -63,9 +63,10 @@ func main() {
 				<html>
 					<head><title>Search</title></head>
 					<body>
-						<h1>Search</h1>
+						<h1>Kitabe Dede Qorqud Search</h1>
+						<p>This project allows you to search any keywords(for example "Bayindir") in Kitabe Dede Qorqud</p>
 						<form method="GET">
-							<label for="q">Search query:</label>
+							<label for="q">Type your keyword:</label>
 							<input type="text" name="q" id="q">
 							<button type="submit">Search</button>
 						</form>
