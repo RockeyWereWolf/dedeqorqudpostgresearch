@@ -3,9 +3,9 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	//"io/ioutil"
-	//"net/http"
+	"net/http"
 	"os"
+	"strings"
 
 	_ "github.com/lib/pq"
 	log "github.com/sirupsen/logrus"
@@ -32,94 +32,80 @@ func main() {
 	if os.Getenv("DEBUG") == "true" {
 		log.SetLevel(log.DebugLevel)
 	}
-}
-	/* Read the SQL schema file
-	schema, err := ioutil.ReadFile("sql/schema.sql")
-	if err != nil {
+
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		// Parse the search query from the request parameters
+		query := strings.TrimSpace(r.URL.Query().Get("q"))
+		if query == "" {
+			// Display an empty search form if no query was provided
+			fmt.Fprint(w, `
+				<html>
+					<head><title>Search</title></head>
+					<body>
+						<h1>Search</h1>
+						<form method="GET">
+							<label for="q">Search query:</label>
+							<input type="text" name="q" id="q">
+							<button type="submit">Search</button>
+						</form>
+					</body>
+				</html>
+			`)
+			return
+		}
+
+		// Execute the full-text search query
+		rows, err := db.Query(`
+			SELECT id, body, ts_headline(body, q) AS snippet
+			FROM documents, to_tsquery($1) AS q
+			WHERE to_tsvector('english', body) @@ q
+		`, query)
+		if err != nil {
+			http.Error(w, "Failed to execute query", http.StatusInternalServerError)
+			log.Error(err)
+			return
+		}
+		defer rows.Close()
+
+		// Display the search results in an HTML page
+		fmt.Fprintf(w, `
+			<html>
+				<head><title>Search Results</title></head>
+				<body>
+					<h1>Search Results</h1>
+					<p>Showing results for: %q</p>
+		`, query)
+		for rows.Next() {
+			var id int
+			var body, snippet string
+			if err := rows.Scan(&id, &body, &snippet); err != nil {
+				http.Error(w, "Failed to scan row", http.StatusInternalServerError)
+				log.Error(err)
+				return
+			}
+			fmt.Fprintf(w, `
+				<div>
+					<h3>Document #%d</h3>
+					<p>%s</p>
+					<p><em>%s</em></p>
+				</div>
+			`, id, snippet, body)
+		}
+		if err := rows.Err(); err != nil {
+			http.Error(w, "Failed to iterate over results", http.StatusInternalServerError)
+			log.Error(err)
+			return
+		}
+		fmt.Fprintf(w, `
+				</body>
+			</html>
+		`)
+	})
+	// Start the HTTP server and listen for incoming requests
+	addr := ":8080"
+	log.Infof("Starting server at %s", addr)
+	if err := http.ListenAndServe(addr, nil); err != nil {
 		log.Fatal(err)
 	}
-	// Execute the SQL schema file
-	_, err = db.Exec(string(schema))
-	if err != nil {
-		log.Fatal(err)
-	}
-	// Define the HTTP handlers
-	http.HandleFunc("/", homePage)
-	http.HandleFunc("/search", searchHandler)
-	// Start the HTTP server
-	err = http.ListenAndServe(":8080", nil)
-	if err != nil {
-		panic(err)
-	}
 }
 
-// Read and execute sql files
-// Initial html page layout
-func homePage(w http.ResponseWriter, r *http.Request) {
-	// Add the HTML form to get the user's search term
-	fmt.Fprintf(w, "<form method='POST' action='/search'>")
-	fmt.Fprintf(w, "<input type='text' name='searchTerm'>")
-	fmt.Fprintf(w, "<input type='submit' value='Search'>")
-	fmt.Fprintf(w, "</form>")
-}
-
-// Executing search results
-func searchHandler(w http.ResponseWriter, r *http.Request) {
-	// Get the search term from the form data
-	searchTerm := r.FormValue("searchTerm")
-	// Perform the full text search
-	results, err := performFullTextSearch(searchTerm)
-	if err != nil {
-		http.Error(w, "Error performing full text search", http.StatusInternalServerError)
-		return
-	}
-	// Display the results on the web page
-	fmt.Fprintf(w, "<h1>Search Results</h1>")
-	for _, result := range results {
-		fmt.Fprintf(w, "<p>%s</p>", result)
-	}
-}
-
-// Performing PostgreSQL full text search on the response
-func performFullTextSearch(searchTerm string) ([]string, error) {
-	// Get the database connection parameters from environment variables
-	host := "dedeqorqudpostgresearch-db-1"
-	port := os.Getenv("PGPORT")
-	user := os.Getenv("PGUSER")
-	password := os.Getenv("PGPASSWORD")
-	dbname := os.Getenv("PGDATABASE")
-
-	// Create a connection string using the parameters
-	connStr := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
-		host, port, user, password, dbname)
-	// Open a connection to the database
-	db, err := sql.Open("postgres", connStr)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer db.Close()
-
-	// Define the search query
-	query := fmt.Sprintf("SELECT text FROM documents WHERE to_tsvector('english', text) @@ to_tsquery('english', '%s')", searchTerm)
-        // Execute the search query
-        rows, err := db.Query(query)
-        if err != nil {
-            return nil, err
-        }
-        defer rows.Close()
-        // Collect the search results
-        var results []string
-           for rows.Next() {
-        var text string
-        err = rows.Scan(&text)
-        if err != nil {
-            return nil, err
-        }
-        results = append(results, text)
-    }
-    err = rows.Err()
-    if err != nil {
-        return nil, err
-    }
-    return results, nil
-} */
