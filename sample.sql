@@ -516,7 +516,7 @@ lance never shatter in the thrusting. May your white-haired
 mother’s place be heaven, may your white-bearded father’s place
 be paradise. May your lamp which God has lit bum on, may
 mighty God never put you in need of unworthy men, O my
-Khan!');
+Khan!'), 
 
 INSERT INTO books (title, main_character, content)
 VALUES ('How Salur Kazan’s House was Pillaged','Salur Kazan',
@@ -1100,7 +1100,7 @@ the Face of God. On your white forehead I invoke five words
 of blessing,31 may they be accepted. May your God-given hope
 never be disappointed, may He grant you increase and preserve
 you in strength and forgive your sins for the honour of Muhammad 
-the Chosen of beautiful name, O my Khan!');
+the Chosen of beautiful name, O my Khan!'), 
 
 INSERT INTO books (title, main_character, content)
 VALUES ('Bamsi Beyrek of the Grey House','Bamsi Beyrek',
@@ -2059,8 +2059,8 @@ danger of burning, Yaltajuk left the woods, fell at Beyrek’s feet
 and came beneath his sword, but he escaped, for Beyrek forgave
 him his crimes.
 Prince Kazan said, ‘Now you may attain your desire.’ But
-Beyrek replied, ‘My Khan Kazan, until I have freed my comrades and taken the castle I shall not attain my desire.’ 
-Then Prince Kazan gave a great shout: ‘For Beyrek’s sake, all the
+Beyrek replied, ‘My Khan Kazan, until I have freed my comrades and taken the castle I shall not attain my desire.’ Then
+Prince Kazan gave a great shout: ‘For Beyrek’s sake, all the
 princes and warriors who love me, to horse! ’ The nobles of the
 teeming Oghuz mounted and rode off, crying, ‘Bayburt Castle,
 where are you?’ The infidels’ spies brought the news, the infidel
@@ -5565,7 +5565,7 @@ Chosen of beautiful name, O my Khan!
 May God the Extolled, the Most High, have mercy on those
 who remember in their prayers the writer of this book, and may
 those who say ‘Amen, Amen’ see the Face of God, O my Khan,
-O my Prince!'), 
+O my Prince!');
 
 INSERT INTO books (title, main_character, content)
 VALUES ('The Wisdom of Dede Korkut','Dede Korkut',
@@ -5720,7 +5720,7 @@ die and vanish for ever, you know! I still have to sleep in this
 ruin! Would it have hurt you to keep an eye on my home for an 
 instant? They say the neighbour’s due is God’s due!” May such
 a woman’s babies never grow up, may such a wife never come to
-your hearth, O my Khan !
+your hearth, O my Khan!
 ‘Fourth is she who whatever you say to her it makes no 
 difference. When a respected guest comes from the plain and
 the wilds, and her husband is at home and says to her, “Up and
