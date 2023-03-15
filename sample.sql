@@ -3,7 +3,7 @@ CREATE TABLE books (
   title TEXT NOT NULL,
   main_character TEXT NOT NULL,
   content TEXT NOT NULL
-),
+);
 
 INSERT INTO books (title, main_character, content)
 VALUES ('Boghach Khan Son of Dirse Khan','Boghach Khan',
