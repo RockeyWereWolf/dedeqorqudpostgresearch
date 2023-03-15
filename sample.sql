@@ -6,8 +6,8 @@ CREATE TABLE books (
 );
 
 INSERT INTO books (title, main_character, content)
-VALUES ('Boghach Khan Son of Dirse Khan','Boghach Khan','
-One day Bayindir Khan son of Kam Ghan rose up from his
+VALUES ('Boghach Khan Son of Dirse Khan','Boghach Khan',
+'One day Bayindir Khan son of Kam Ghan rose up from his
 place. He had his striped parasol set up on the earth’s face, his
 many-coloured pavilion reared up to the face of the sky. In a
 thousand places silken rugs were spread. Once a year the Khan
@@ -15,7 +15,8 @@ of Khans, Bayindir Khan, used to make a feast and entertain
 the Oghuz nobles. This year again he made a feast and had his
 men slaughter of horses the stallions, of camels the males, of
 sheep the rams.2 He had a white tent pitched in one place, a red
-in another, a black in another. He gave orders thus: Tut anyone who has no sons or daughters in the black tent. Spread
+in another, a black in another. He gave orders thus: Tut anyone 
+who has no sons or daughters in the black tent. Spread
 black felt beneath him. Set before him mutton-stew made from
 the black sheep. If he will eat it, he may; if he will not, he can
 get up and go. Put him who has a son in the white tent, him
@@ -43,14 +44,16 @@ whether in my sword or in my table? Baser men than I he puts
 in the white tent and the red tent. What is my offence that he
 puts me in the black tent?’ ‘Lord,’ they said, ‘the order this day
 from Bayindir Khan is this. He has said, “Him who has no son
-or daughter God Most High has humiliated, and we shall humiliate him too.” ’ Dirse Khan stood and said, ‘Up, my warriors;
+or daughter God Most High has humiliated, and we shall humiliate him too.”’ 
+Dirse Khan stood and said, ‘Up, my warriors;
 rise from your place. This mysterious affliction of mine is due
 either to me or to my wife.’
 *Do you know what has befallen? Bayindir Khan rose up
 and had three tents pitched; one white, one red, one black. He
 said: “Put the father of sons in the white tent, the father of
 daughters in the red tent, and him who is father of none in the
-black tent. Spread black felt beneath him, set before him muttonstew made from the black sheep. If he will eat it, he may; if he
+black tent. Spread black felt beneath him, set before him muttonstew 
+made from the black sheep. If he will eat it, he may; if he
 will not, he can get up and go. Any man who has neither son
 nor daughter, God Most High has humiliated, and we shall
 humiliate him too.” When I arrived they met me and put me
@@ -71,7 +74,8 @@ My sugar-melon, my honey-melon, my musk-melon
 and had three tents pitched; one white, one red, one black. He
 said: “Put the father of sons in the white tent, the father of
 daughters in the red tent, and him who is father of none in the
-black tent. Spread black felt beneath him, set before him muttonstew made from the black sheep. If he will eat it, he may; if he
+black tent. Spread black felt beneath him, set before him muttonstew 
+made from the black sheep. If he will eat it, he may; if he
 will not, he can get up and go. Any man who has neither son
 nor daughter, God Most High has humiliated, and we shall
 humiliate him too.” When I arrived they met me and put me
@@ -112,7 +116,8 @@ them pray.
 So, with prayerful mouths singing your praises,
 God may grant us a fine hefty child.’
 Dirse Khan, at his wife’s word, made an enormous feast and
-asked what he wanted. He had slaughtered of horses the stallions, of camels the males, of sheep the rams. He summoned
+asked what he wanted. He had slaughtered of horses the stallions, 
+of camels the males, of sheep the rams. He summoned
 the nobles of the Inner Oghuz and the Outer Oghuz. When he
 saw the hungry, he fed him; when he saw the naked, he clothed
 him. He saved the debtor from his debt. He heaped up meat in
@@ -129,7 +134,8 @@ Now it seems, my Khan, that Bayindir Khan had a bull and a
 camel. If that bull gored a hard rock it would crumble like
 flour. Once in the summer, once in the autumn, they used to
 let the bull and the camel fight, while Bayinder Khan and the
-nobles of the teeming Oghuz would watch and enjoy themselves. Now, once again, in the summer they brought the bull
+nobles of the teeming Oghuz would watch and enjoy themselves. 
+Now, once again, in the summer they brought the bull
 out of the palace. Three men held him with iron chains on his
 right, three men on his left. They came and released him in the
 middle of the arena. Well now, my Sultan, Dirse Khan’s young
@@ -147,7 +153,8 @@ they struggled together. The boy’s shoulders were covered with
 the bull’s foam. Neither the boy nor the bull could gain the
 victory. Then the boy thought, ‘People put a pole against a
 roof to hold it up. Why am I standing here propping up this
-creature’s forehead?’ He removed his fist from the bull’s forehead and stepped aside. The bull could not stand on its feet
+creature’s forehead?’ He removed his fist from the bull’s forehead 
+and stepped aside. The bull could not stand on its feet
 and collapsed headlong. The boy drew his knife and cut off the
 bull’s head. The Oghuz nobles crowded round the boy, crying
 ‘Well done! Let Dede Korkut come and give this boy a name;
@@ -186,7 +193,8 @@ and evil. He led out his forty young men and marched against
 the teeming Oghuz. Wherever a beautiful girl appeared he
 dragged her off, he reviled white-bearded elders, he tore the
 hair of white-haired women.8 The news will cross the limpid
-flowing rivers, the tidings will climb the many-coloured mountain that lies askew,9 the news will reach the Great Khan Bayindir. “Such and such monstrous evil has Dirse Khan’s son
+flowing rivers, the tidings will climb the many-coloured mountain that 
+lies askew, the news will reach the Great Khan Bayindir. “Such and such monstrous evil has Dirse Khan’s son
 wrought,” they will say. It will be better for you to die than to
 walk alive. Bayindir Khan will summon you, he will be fiercely
 angry with you. What good is such a son to you? Better no son
@@ -242,7 +250,8 @@ stag, but it is you he will kill. Before he can kill you, see that
 you kill him!’ As the boy chased the stag, he kept passing in
 front of his father. Dirse Khan took up his strong bow, strung
 with wolf-sinew. He rose up in his stirrups and drew mightily
-and shot far; the arrow struck the boy between the shoulderblades and felled him. Deep went the arrow, the red blood
+and shot far; the arrow struck the boy between the shoulderblades 
+and felled him. Deep went the arrow, the red blood
 welled forth and his bosom was filled with it. Clasping the
 neck of his Arab horse, he slid to the ground. Dirse Khan
 wanted to fall sobbing on his own dear son, but those forty
@@ -308,7 +317,8 @@ Dirse Khan’s lady turned away. She could not bear it; she
 called her forty slender maidens to her side, she mounted her
 Arab horse and went in quest of her dear son. She reached
 Kazilik Mountain, whose ice and snow do not melt in winter or
-summer, and she climbed it. Up she galloped, from the lowlands to the high places. She looked and saw that crows and
+summer, and she climbed it. Up she galloped, from the lowlands 
+to the high places. She looked and saw that crows and
 ravens were alighting in a valley and rising, settling and flying
 up. She spurred her Arab horse and rode in that direction.
 Now, my Sultan, that was the place where the boy had been
@@ -318,7 +328,8 @@ away and would not permit them to settle. As the boy lay there,
 Khizr11 on his grey horse appeared to him. Thrice he patted
 his wound with his hand, saying, Tear not, boy, you will not
 die of this wound. The flowers of the mountain with your
-mother’s milk will be salve for it.’ Then he disappeared. Suddenly the boy’s mother galloped up. She looked and saw her
+mother’s milk will be salve for it.’ Then he disappeared. 
+Suddenly the boy’s mother galloped up. She looked and saw her
 own dear son lying, bedaubed with red blood. Crying out to
 her son she declaimed; let us see, my Khan, what she declaimed.
 ‘Sleep has fallen on your black almond eyes; open them,
@@ -361,7 +372,8 @@ He went on, ‘Mother, don’t cry. I shall not die of this wound.
 Don’t be frightened. Khizr of the grey horse came to me. Thrice
 he patted my wound and said, “You will not die of this wound.
 The flowers of the mountain with your mother’s milk will be
-salve for you.” ’ At these words the forty slender maidens scattered and collected mountain flowers. The boy’s mother squeezed
+salve for you.” ’ At these words the forty slender maidens 
+scattered and collected mountain flowers. The boy’s mother squeezed
 her breast but no milk came. Again she squeezed and no milk
 came. The third time she struck herself a blow and her breast
 became tight and full. She squeezed, and out came milk and
@@ -415,7 +427,8 @@ young men in ambush. The forty cowards had made camp and
 were drinking the strong red wine, when suddenly Boghach
 Khan came upon them. Seeing him, they said, ‘Come on, let us
 seize this young man and carry him off and deliver the pair of
-them to the infidel.’ Dirse Khan said, ‘Mercy, my forty comrades ! There is no doubt that God is One. Untie my hands, give
+them to the infidel.’ Dirse Khan said, ‘Mercy, my forty comrades! 
+There is no doubt that God is One. Untie my hands, give
 me my arm-long lute, and I shall turn that young man back.
 Then you can kill me, or let me live and set me free.’ They
 untied his hands and gave him his lute. He did not know that
@@ -506,8 +519,8 @@ mighty God never put you in need of unworthy men, O my
 Khan!'); 
 
 INSERT INTO books (title, main_character, content)
-VALUES ('How Salur Kazan’s House was Pillaged','Salur Kazan','
-One day Salur Kazan son of Ulash, chick of the long-plumed
+VALUES ('How Salur Kazan’s House was Pillaged','Salur Kazan',
+'One day Salur Kazan son of Ulash, chick of the long-plumed
 bird, hope of the wretched and the helpless, lion of the Emet
 river, tiger of the Karajuk, master of the chestnut horse, father
 of Khan Uruz, son-in-law of Bayindir Khan, luck of the teeming Oghuz, 
@@ -1090,8 +1103,8 @@ you in strength and forgive your sins for the honour of Muhammad
 the Chosen of beautiful name, O my Khan!'); 
 
 INSERT INTO books (title, main_character, content)
-VALUES ('Bamsi Beyrek of the Grey House','Bamsi Beyrek','
-Bayindir Khan son of Kam Ghan rose up from his place.
+VALUES ('Bamsi Beyrek of the Grey House','Bamsi Beyrek',
+'Bayindir Khan son of Kam Ghan rose up from his place.
 On the black earth he pitched his white pavilion, his 
 manycoloured tents reared up to the face of the sky. In a thousand
 places silken rugs were spread. The nobles of the Inner Oghuz
@@ -2099,8 +2112,7 @@ the Chosen of beautiful name, O my Khan!
 '); 
 
 INSERT INTO books (title, main_character, content)
-VALUES ('How Prince Uruz Son of Salur Kazan was Taken Prisoner',
-'Prince Uruz',
+VALUES ('How Prince Uruz Son of Salur Kazan was Taken Prisoner','Prince Uruz',
 'One day Salur Kazan son of Ulash, lion of heroes, chick of the
 long-plumed bird, hope of the wretched and the helpless, prop
 of forsaken warriors, marshal of the teeming Oghuz, foe of Kan
@@ -2774,8 +2786,8 @@ in strength and forgive your sins for the sake of Muhammad of
 beautiful name, O my Khan!'); 
 
 INSERT INTO books (title, main_character, content)
-VALUES ('Wild Dumrul Son of Dukha Koja','Dumrul','
-It seems, my Khan, that among the Oghuz there was a man
+VALUES ('Wild Dumrul Son of Dukha Koja','Dumrul',
+'It seems, my Khan, that among the Oghuz there was a man
 they called Wild Dumrul, son of Dukha Koja. He had a bridge
 built, over a dried-up stream. He took thirty-three silver pieces
 from all who crossed; those who did not cross he beat soundly
@@ -3058,7 +3070,7 @@ of Muhammad of beautiful name, O my Khan!');
 
 INSERT INTO books (title, main_character, content)
 VALUES ('Kan Turali Son of Kanli Koja','Kan Turali',
-'IN the days of the Oghuz there was a stout-hearted warrior called
+'In the days of the Oghuz there was a stout-hearted warrior called
 Kanli Koja, who had a grown-up son, a dare-devil young man
 named Kan Turali. Kanli Koja said, ‘Friends, my father died and
 I was left; I took his place, I took his lands. Tomorrow I shall
@@ -3623,8 +3635,8 @@ for the sake of Muhammad the Chosen of beautiful name, O my
 Khan!'); 
 
 INSERT INTO books (title, main_character, content)
-VALUES ('Yigenek Son of Kazilik Koja','Yigenek','
-Bayindir Khan son of Kam Ghan had risen from his place.
+VALUES ('Yigenek Son of Kazilik Koja','Yigenek',
+'Bayindir Khan son of Kam Ghan had risen from his place.
 He had pitched his white pavilion on the black earth. His manycoloured 
 parasol had reared towards the sky. In a thousand
 places his silken carpets had been spread. The nobles of the Inner
@@ -3855,8 +3867,8 @@ May He forgive your sins for the honour of Muhammad the
 Chosen of beautiful name, O my Khan!'); 
 
 INSERT INTO books (title, main_character, content)
-VALUES ('How Basat Killed Goggle-eye',
-'Basat','It is related, my Khan, that once while the Oghuz were sitting in
+VALUES ('How Basat Killed Goggle-eye','Basat',
+'It is related, my Khan, that once while the Oghuz were sitting in
 their encampment the enemy fell upon them. In the darkness of
 night they broke and scattered. As they fled, the baby son of Uruz
 Koja fell. A lioness found him, carried him off and nursed him.
@@ -4163,7 +4175,7 @@ Our hero who leads on the day of battle is Salur Kazan.
 If you ask my father’s name, it is Mighty Tree.
 If you ask my mother’s name, it is Raging Lioness.
 If you ask my name, it is Basat son of Uruz.’
-‘Then we are brothers! ’ said Goggle-eye, ‘Spare me 1 ’ Basat replied,
+‘Then we are brothers! ’ said Goggle-eye, ‘Spare me!’ Basat replied,
 ‘You filthy scoundrel, you have made my white-bearded father
 weep,
 You have made my old white-haired mother cry,
@@ -4296,7 +4308,7 @@ Khan,
 You ate and drank with the chestnut-eyed princes.
 Was someone at odds with his people?
 Was your poor head involved in a quarrel?
-And, my lord, you are not on your fine horse; where is he? 107
+And, my lord, you are not on your fine horse; where is he?
 Nor are you wearing your golden helmet or the robe that goes
 with it,
 You do not caress your chestnut-eyed princes,
@@ -4472,7 +4484,7 @@ King Shökli is very cross with you.
 Just cut off his handsome head while you’re about it,
 Spill his red blood on the ground.”
 Have you a white bearded father? Don’t make him cry!
-Have you a white-haired mother? Don’t make her weep 1
+Have you a white-haired mother? Don’t make her weep!
 A lone warrior cannot be a hero,
 A stalk of mugwort cannot be strong.
 Doomed pimp, son of a pimp,
@@ -4534,7 +4546,7 @@ You placed the crown on Adam’s head,
 You condemned Satan to hell,
 You exiled him from the Court for one sin.
 You let Abraham be seized,
-You, my Khan, let him be bundled up in leather bonds,110
+You, my Khan, let him be bundled up in leather bonds,
 Picked up and thrown into the fire;
 You made the fire into a garden.
 I take refuge in Your Unity,
@@ -4578,7 +4590,7 @@ name, O my Khan!
 
 INSERT INTO books (title, main_character, content)
 VALUES ('Segrek Son of Ushun Koja','Segrek',
-'IN the days of the Oghuz there was a man called Ushun Koja. In
+'In the days of the Oghuz there was a man called Ushun Koja. In
 his life he had two sons. The name of the elder son was Egrek.
 He was a brave, reckless, redoubtable warrior. He used to visit
 Bayindir Khan’s court whenever he chose. At the court of
@@ -4736,7 +4748,7 @@ Give me my heart’s desire, take your heart’s desire,
 Then go, my warrior.’
 Said the boy, Daughter of a pimp! I have sworn an oath on
 my brother’s head and I am not turning back.’ The girl said, ‘So
-long as they call me “luckless117 bride”, they may as well call me
+long as they call me “luckless bride”, they may as well call me
 “shameless bride”; I shall speak to my father- and mother-in-law.’
 She declaimed:
 Tather of my husband, better than my father,
@@ -4757,7 +4769,7 @@ to you. You will reach there and come home safe and well, if you
 are to come.’ He kissed his parents’ hands, then leaped onto his
 well-trained horse.
 Away through the night he galloped. For three days and nights
-he rode. He passed beyond the limits of Dere-Sham 118 and came
+he rode. He passed beyond the limits of Dere-Sham and came
 to that park where his brother had been seized. He saw the infidel
 horse-drovers pasturing some mares. He drew his sword and
 struck down six infidels. Drumming, he stampeded the mares
@@ -4779,7 +4791,7 @@ garbed infidel and drove them back to the castle. Again he could
 not overcome his drowsiness; he went back to his place, lay down
 and slept, again putting the horse’s reins round his wrist. Such
 infidels as were left alive came fleeing to the King. The King
-said, ‘I spit in your faces! Sixty of you could not take one boy! ’
+said, ‘I spit in your faces! Sixty of you could not take one boy!’
 This time a hundred infidels came at the boy. Again his horse
 woke him. He saw the infidels coming in an ordered line. He
 stood, mounted his horse, invoked a blessing on Muhammad of
@@ -4793,7 +4805,7 @@ The King said, ‘This time three hundred of you will go.’ The
 infidels replied, ‘We’re not going; he’ll wipe us out, he’ll kill the
 lot of us. * ‘Then what is to be done?’ said the King. ‘Go, release
 that captive warrior and bring him here. We’ll set a thief to
-catch a thief;119 give him a horse and armour.’ They came to
+catch a thief; give him a horse and armour.’ They came to
 Egrek and said, ‘Warrior, our King has shown you grace. There
 is a crazy warrior in these parts who is taking the bread of
 travellers and wayfarers, of shepherds and children. Seize that
@@ -4838,7 +4850,7 @@ Let not your white-bearded father and aged mother weep.
 What young man are you, young man from the teeming
 Oghuz land?
 For the Creator’s sake arise and come!
-The infidels are all around you, understand! ’
+The infidels are all around you, understand!’
 The boy awoke with a start and leaped to his feet. He grasped
 his sword-hilt to strike this man. But he saw that he had the lute
 in his hand, and he said, ‘Infidel! I do not strike you, out of
@@ -4904,7 +4916,7 @@ He had dragged his dear brother from the clutches of the
 bloody infidel. He sent a bearer of good tidings to his white-
 bearded father, to tell his father to come and meet him. The
 messenger came to Ushun Koja. ‘Good news!’ he said, ‘Bright
-be your eyes! 120 Both your sons have come home together, safe
+be your eyes! Both your sons have come home together, safe
 and well.’ Hearing this, the old man rejoiced. The thunderous
 drums were beaten, the gold and bronze trumpets were sounded.
 That day, pavilions and tents of many colours were pitched. Of
@@ -4966,10 +4978,11 @@ hole in the millstone.
 One day, the infidel Queen said, ‘I’ll go and see what sort of 
 person this Kazan is who is supposed to have laid low so many
 men.’ The lady came and had the jailer open the door. She called
-out, ‘Prince Kazan, how are you? Do you prefer life underground or overground? And what are you eating and drinking,
+out, ‘Prince Kazan, how are you? Do you prefer life underground 
+or overground? And what are you eating and drinking,
 and what sort of horse do you ride?’ Kazan replied, ‘When you
 give food to your dead I take it from their hands, and I ride your
-liveliest dead and I keep the most sluggish as spare mounts.’125
+liveliest dead and I keep the most sluggish as spare mounts.’
 The Queen said, ‘I adjure you by your religion, Prince Kazan;
 we had a little daughter, seven years old, who died. Be so kind as
 not to ride on her.’ Kazan replied, ‘She is the liveliest of all your
@@ -5028,7 +5041,7 @@ Again he declaimed, saying,
 ‘When rocks rolled down from the lofty black mountain,
 I was the hero Kazan who held them back with my strong heel
 and thigh.
-When Pharaoh laden with stakes emerged from the ground,129
+When Pharaoh laden with stakes emerged from the ground,
 I was the hero Kazan who restrained him with my strong heel.
 When the boisterous sons of nobles quarrelled,
 I was the hero Kazan who cracked the whip and quelled them.
@@ -5038,7 +5051,7 @@ When my horse’s ears could not be seen,
 When other men without guides missed the way,
 I was the hero Kazan who completed the journey with no
 guide.
-I went and found the seven-headed dragon,130
+I went and found the seven-headed dragon,
 My left eye wept at the awesome sight.
 “Eye! ” I said, “Cowardly eye, unmanly eye!
 What’s to fear in a snake?”
@@ -5056,7 +5069,7 @@ Its swimmers dart about to right and left,
 Its sailors turn about on the bed of the sea.
 Its heretics cry in unison “I am God ! ” on the bed of the sea.
 Its young women turn away from the face and read the back.
-The Princes of Sanjidan play with golden knuckle-bones.131
+The Princes of Sanjidan play with golden knuckle-bones.
 Six times the Oghuz went there and could not overcome it;
 I, Kazan, went to that fortress with six men,
 Before six days were done I had taken it.
@@ -5076,7 +5089,7 @@ father,
 Those whose locks I desired were your daughters and
 daughters-in-law.
 At Aghcha Kala Sürmelü I set my horse prancing,
-I galloped to raid the land of Kanin.132
+I galloped to raid the land of Kanin.
 I tore down the tower of Akhisar Castle,
 They brought me white silver; “Dross! ” I said.
 They brought me red gold; “Copper! ” I said.
@@ -5150,7 +5163,7 @@ quest of his father; equip yourselves and come.’ The army
 assembled and came. The hero Uruz had his tents taken down
 and his equipment loaded. Kara Göne was appointed marshal of 
 the host. They sounded the trumpets and moved off.
-On their way was the infidels’ great church,133 with priests on
+On their way was the infidels’ great church, with priests on
 watch. It was a church very difficult of access. They dismounted
 and put on traders’ garb. Disguised as merchants they came,
 leading mules and camels. The infidels saw that those who were
@@ -5176,8 +5189,8 @@ approved this plan. They went and released Kazan and brought
 him before the King. The King said, ‘Prince Kazan, an enemy
 has attacked us. If you will rid us of this enemy we shall set you
 free. We shall submit to paying tribute, while you will take an 
-oath not to come to this land of ours as an enemy.’ Kazan said, ‘I
-swear and I swear that so long as we see the straight road we shall
+oath not to come to this land of ours as an enemy.’ Kazan said, 
+‘I swear and I swear that so long as we see the straight road we shall
 never come down the crooked road.’ The infidels were delighted,
 saying, ‘Kazan has sworn a fine oath.’ The King gathered his
 host, took the field and had the tents pitched. The infidel army
@@ -5377,11 +5390,11 @@ are we his enemies.’ Uruz brought a Koran and said, ‘Now
 swear.’ All the nobles laid their hands on it and swore an oath:
 *We are friends of your friend, and enemies of your enemy.’ Uruz
 dressed all the nobles in robes of honour. Then he turned and
-said, ‘Nobles! Beyrek has married my daughter;136 he is my son-in-law, 
+said, ‘Nobles! Beyrek has married my daughter; he is my son-in-law, 
 but he is Kazan’s minister. Let us trick him; let us sum-
 mon him to our hearth to make peace between us and Kazan.
-When he comes, if he obeys us, well and good. If he does not, I
-shall grasp his beard while you bring down your swords on him
+When he comes, if he obeys us, well and good. If he does not, 
+I shall grasp his beard while you bring down your swords on him
 and hack him to pieces. With Beyrek gone, our business with
 Kazan will be successful.’
 They sent a letter to Beyrek. Beyrek was by his hearth-fire,
