@@ -516,7 +516,7 @@ lance never shatter in the thrusting. May your white-haired
 mother’s place be heaven, may your white-bearded father’s place
 be paradise. May your lamp which God has lit bum on, may
 mighty God never put you in need of unworthy men, O my
-Khan!'), 
+Khan!');
 
 INSERT INTO books (title, main_character, content)
 VALUES ('How Salur Kazan’s House was Pillaged','Salur Kazan',
@@ -1100,7 +1100,7 @@ the Face of God. On your white forehead I invoke five words
 of blessing,31 may they be accepted. May your God-given hope
 never be disappointed, may He grant you increase and preserve
 you in strength and forgive your sins for the honour of Muhammad 
-the Chosen of beautiful name, O my Khan!'), 
+the Chosen of beautiful name, O my Khan!'); 
 
 INSERT INTO books (title, main_character, content)
 VALUES ('Bamsi Beyrek of the Grey House','Bamsi Beyrek',
