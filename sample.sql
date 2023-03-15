@@ -2108,8 +2108,7 @@ part you from your sons and brothers, may the end of days not
 part you from the pure Faith. May those who say ‘Amen’ see
 His face. May He grant you increase and preserve you in
 strength and forgive your sins for the honour of Muhammad
-the Chosen of beautiful name, O my Khan!
-'); 
+the Chosen of beautiful name, O my Khan!'); 
 
 INSERT INTO books (title, main_character, content)
 VALUES ('How Prince Uruz Son of Salur Kazan was Taken Prisoner','Prince Uruz',
@@ -4585,8 +4584,7 @@ I shall pray for you, my Khan: may your firm-rooted black
 mountain never be overthrown, may your great shady tree never
 be cut down, may your God-given hope never be disappointed,
 may He forgive your sins for the sake of Muhammad of beautiful
-name, O my Khan!
-'); 
+name, O my Khan!'); 
 
 INSERT INTO books (title, main_character, content)
 VALUES ('Segrek Son of Ushun Koja','Segrek',
@@ -5305,8 +5303,7 @@ the pure Faith. May the Mighty never put you in need of un-
 worthy men. I invoke five words of blessing; may they be
 accepted. May those who say ‘Amen’ see the Face of God, may
 He forgive your sins for the honour of Muhammad the Chosen
-of beautiful name, O my Khan!
-'); 
+of beautiful name, O my Khan!'); 
 
 INSERT INTO books (title, main_character, content)
 VALUES ('How the Outer Oghuz Rebelled against the Inner Oghuz and How Beyrek Died','Beyrek',
@@ -5568,8 +5565,7 @@ Chosen of beautiful name, O my Khan!
 May God the Extolled, the Most High, have mercy on those
 who remember in their prayers the writer of this book, and may
 those who say ‘Amen, Amen’ see the Face of God, O my Khan,
-O my Prince!
-'); 
+O my Prince!'); 
 
 INSERT INTO books (title, main_character, content)
 VALUES ('The Wisdom of Dede Korkut','Dede Korkut',
@@ -5738,5 +5734,4 @@ her husband.158 If you tell her a thousand things she will
 not accept one of them; she will not permit her husband’s words
 to enter her ears. She is of the same breed as the Prophet Noah’s
 donkey.159 May God protect you from her also, my Khan; may
-such a wife never come to your hearth.’'); 
-
+such a wife never come to your hearth.’');
