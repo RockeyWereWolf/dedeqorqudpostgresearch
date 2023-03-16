@@ -2,7 +2,7 @@
 
 As a title says this is repo of a project to implement full text search through "Kitabe Dede Qorqud" books using GO lang and PostgreSQL
 
-Project will be implemented in a docker, so here is how to build:
+Build and run:
 
 clone repository
 
