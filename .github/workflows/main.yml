@@ -3,8 +3,6 @@ name: deploy-project
 on:
   push
    
-
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -12,7 +10,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
         with:
-          fetch-depth: 1
+          fetch-depth: 0
 
       - uses: RockeyWereWolf/docker-compose-gitops-action@master
         name: Remote Deployment
@@ -22,5 +20,3 @@ jobs:
           ssh_public_key: ${{ secrets.DEDE_SSH_KEY }}
           ssh_private_key: ${{ secrets.DEDE_SSH_PRIVATE_KEY }}
           compose_file_path: docker-compose.yml
-          upload_directory: true # upload docker directory
-          docker_compose_directory: dedeqorqudpostgresearch  # directory to upload
