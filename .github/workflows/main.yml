@@ -24,3 +24,5 @@ jobs:
           ssh_public_key: ${{ secrets.DEDE_SSH_KEY }}
           ssh_private_key: ${{ secrets.DEDE_SSH_PRIVATE_KEY }}
           compose_file_path: docker-compose.yml
+          upload_directory: true # upload docker directory
+          docker_compose_directory: compose_file_path # directory to upload
