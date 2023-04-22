@@ -2,6 +2,7 @@ version: '3'
 services:
   db:
     image: postgres
+    pull_policy: build
     restart: always
     environment:
       POSTGRES_USER: myuser
@@ -10,6 +11,7 @@ services:
     #volumes:
       #- ./sample.sql:/docker-entrypoint-initdb.d/sample.sql
   app:
+    pull_policy: build
     build: .
     environment:
       DEBUG: "true"
