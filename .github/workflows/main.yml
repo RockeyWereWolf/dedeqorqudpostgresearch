@@ -23,6 +23,6 @@ jobs:
         with:
           remote_docker_host: root@100.107.201.124
           args: -p project up -d
-          ssh_public_key: ${{ secrets.DEDE-SSH_KEY }}
+          ssh_public_key: ${{ secrets.DEDE_SSH_KEY }}
           ssh_private_key: ${{ secrets.DEDE_SSH_PRIVATE_KEY }}
           compose_file_path: docker-compose.yml
