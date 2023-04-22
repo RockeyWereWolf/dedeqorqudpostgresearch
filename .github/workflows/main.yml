@@ -17,7 +17,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: aosus/docker-compose-gitops-action@v1
+      - uses: RockeyWereWolf/docker-compose-gitops-action@master
         name: Remote Deployment
         with:
           remote_docker_host: docker-deploy@129.151.220.209
