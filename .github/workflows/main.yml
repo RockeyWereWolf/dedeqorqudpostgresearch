@@ -5,7 +5,7 @@ on:
     paths:
       - 'project/**'
       - '.github/**'
-    branches: [main]
+
 
 jobs:
   deploy:
