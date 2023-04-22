@@ -6,7 +6,6 @@ on:
       - 'project/**'
       - '.github/**'
     branches: [main]
-  workflow_dispatch:
 
 jobs:
   deploy:
