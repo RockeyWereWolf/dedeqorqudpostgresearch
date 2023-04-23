@@ -15,7 +15,7 @@ jobs:
       - uses: RockeyWereWolf/docker-compose-gitops-action@master
         name: Remote Deployment
         with:
-          remote_docker_host: ubuntu@129.151.196.195
+          remote_docker_host: docker-deploy@129.151.196.195
           args: -p project up -d
           ssh_public_key: ${{ secrets.DEDE_SSH_KEY }}
           ssh_private_key: ${{ secrets.DEDE_SSH_PRIVATE_KEY }}
