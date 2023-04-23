@@ -1,7 +1,7 @@
 version: '3'
 services:
   db:
-    image: postgres:15.2
+    image: postgres:14.7
     pull_policy: build
     restart: always
     environment:
